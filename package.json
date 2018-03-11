@@ -1,0 +1,42 @@
+{
+  "name": "egg-boilerplate-d-ts",
+  "version": "1.0.0",
+  "description": "egg ts boilerplate using d.ts",
+  "scripts": {
+    "start": "egg-scripts start",
+    "dev": "npm run tsc && concurrently -r \"ets -w\" \"npm run tsc:w\" \"egg-bin dev\"",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "tsc:w": "tsc -p tsconfig.json -w",
+    "test": "npm run tsc && npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "npm run tsc && egg-bin cov",
+    "lint": "tslint .",
+    "ci": "npm run lint && npm run cov",
+    "debug": "concurrently -r \"npm run tsc:w\" \"egg-bin debug\""
+  },
+  "dependencies": {
+    "egg": "^2.2.0",
+    "egg-scripts": "^2.0.0",
+    "moment": "^2.20.1",
+    "source-map-support": "^0.5.0",
+    "tslib": "^1.8.1",
+    "typescript": "^2.6.2",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.40",
+    "@types/mockjs": "^1.0.0",
+    "@types/node": "^8.5.2",
+    "@types/power-assert": "^1.4.29",
+    "@types/supertest": "^2.0.0",
+    "@types/uuid": "^3.4.3",
+    "concurrently": "^3.5.1",
+    "egg-bin": "^4.3.7",
+    "egg-mock": "^3.15.0",
+    "egg-ts-helper": "^0.0.3",
+    "mocha": "^4.1.0",
+    "ts-loader": "^3.2.0",
+    "tslint": "^4.0.0"
+  },
+  "author": "whxaxes<whxaxes@gmail.com>"
+}

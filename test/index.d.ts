@@ -1,5 +1,4 @@
 declare module 'egg-mock/bootstrap' {
-  import { Application, Context } from 'egg';
   import { BaseMockApplication } from 'egg-mock';
   import * as _assert from 'power-assert';
 

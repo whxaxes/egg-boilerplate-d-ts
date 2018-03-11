@@ -1,6 +1,6 @@
 import { Context } from 'egg';
 
-const extendContext = {
+export default {
   get ctx(): Context {
     return this as any as Context;
   },
@@ -13,12 +13,3 @@ const extendContext = {
     return this.ctx.get('X-Requested-With') === 'XMLHttpRequest';
   },
 };
-
-export default extendContext;
-
-declare module 'egg' {
-  interface Context {
-    isProd: typeof extendContext.isProd;
-    isAjax: typeof extendContext.isAjax;
-  }
-}

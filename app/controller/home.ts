@@ -5,13 +5,12 @@ import { Controller } from 'egg';
 export default class HomeController extends Controller {
   public async index() {
     const { ctx, service } = this;
-    const uuid = ctx.locals.uuid;
-    const time =  service.time.today();
+    const time = service.time.today();
 
     if (ctx.isAjax) {
-      ctx.body = { uuid, time };
+      ctx.body = { time };
     } else {
-      ctx.body = `${uuid}：${time}`;
+      ctx.body = time;
     }
   }
 

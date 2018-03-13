@@ -6,7 +6,7 @@ export default function() {
     let uuid = ctx.cookies.get('uuid', { signed: true });
 
     if (!uuid || uuid === 'null') {
-      uuid =  v4();
+      uuid = v4();
 
       ctx.cookies.set('uuid', uuid, {
         signed: true,

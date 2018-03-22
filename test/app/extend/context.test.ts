@@ -17,6 +17,6 @@ describe('test/app/extend/context.test.js', () => {
 
   it('context should has isProd and isAjax', async () => {
     assert(typeof ctx.isProd === 'boolean');
-    assert(typeof ctx.isAjax === 'boolean');
+    assert(typeof ctx.isAjax() === 'boolean');
   });
 });

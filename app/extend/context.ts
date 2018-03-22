@@ -1,15 +1,12 @@
 import { Context } from 'egg';
 
 export default {
-  get ctx(): Context {
-    return this as any as Context;
+  get isProd() {
+    const ctx = this as any as Context;
+    return ctx.app.config.env === 'prod';
   },
 
-  get isProd(): boolean {
-    return this.ctx.app.config.env === 'prod';
-  },
-
-  get isAjax(): boolean {
-    return this.ctx.get('X-Requested-With') === 'XMLHttpRequest';
+  isAjax(this: Context) {
+    return this.get('X-Requested-With') === 'XMLHttpRequest';
   },
 };

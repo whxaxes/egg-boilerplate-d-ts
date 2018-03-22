@@ -4,7 +4,6 @@
 import ExtendObject from '../../../app/extend/context';
 declare module 'egg' {
   interface Context {
-    ctx: typeof ExtendObject.ctx;
     isProd: typeof ExtendObject.isProd;
     isAjax: typeof ExtendObject.isAjax;
   }

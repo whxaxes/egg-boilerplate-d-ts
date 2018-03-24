@@ -4,11 +4,14 @@
   "description": "egg ts boilerplate using d.ts",
   "scripts": {
     "start": "egg-scripts start",
+    "tsn": "egg-bin dev --ts",
     "dev": "npm run tsc && concurrently -r \"ets -w\" \"npm run tsc:w\" \"egg-bin dev\"",
     "tsc": "ets && tsc -p tsconfig.json",
     "tsc:w": "tsc -p tsconfig.json -w",
+    "clean": "trash ./app.js ./agent.js ./app/*.js ./app/**/*.js ./test/*.js ./test/**/*.js ./config/*.js",
     "test": "npm run tsc && npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
+    "tstest": "egg-bin test ./test/index.test.ts --ts",
     "cov": "npm run tsc && egg-bin cov",
     "lint": "tslint .",
     "ci": "npm run lint && npm run cov",
@@ -36,7 +39,9 @@
     "egg-ts-helper": "1.1.0",
     "mocha": "^4.1.0",
     "ts-loader": "^3.2.0",
-    "tslint": "^4.0.0"
+    "tslint": "^4.0.0",
+    "trash-cli": "^1.4.0",
+    "ts-node": "^5.0.0"
   },
   "author": "whxaxes<whxaxes@gmail.com>"
 }

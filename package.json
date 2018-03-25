@@ -8,7 +8,7 @@
     "dev": "npm run tsc && concurrently -r \"ets -w\" \"npm run tsc:w\" \"egg-bin dev\"",
     "tsc": "ets && tsc -p tsconfig.json",
     "tsc:w": "tsc -p tsconfig.json -w",
-    "clean": "trash ./app.js ./agent.js ./app/*.js ./app/**/*.js ./test/*.js ./test/**/*.js ./config/*.js",
+    "clean": "trash ./app.js ./agent.js ./{app,test,config}/**/*.js",
     "test": "npm run tsc && npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "tstest": "egg-bin test ./test/index.test.ts --ts",

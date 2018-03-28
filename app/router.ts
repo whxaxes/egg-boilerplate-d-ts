@@ -1,13 +1,10 @@
 'use strict';
 
-import { Application, Context } from 'egg';
+import { Application } from 'egg';
 
 export default (app: Application) => {
   const { router, controller } = app;
 
-  router.get('/', function* (this: Context) {
-    this.body = 'hi';
-  });
-
+  router.get('/', controller.home.index);
   router.get('/error', controller.home.error);
 };

@@ -8,7 +8,7 @@
     "tsc": "ets && tsc -p tsconfig.json",
     "clean": "trash ./app.js ./agent.js ./{app,test,config}/**/*.js",
     "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test --ts",
+    "test-local": "env EGG_TYPESCRIPT=1 egg-bin test --ts",
     "cov": "egg-bin cov --ts",
     "lint": "tslint .",
     "ci": "npm run lint && npm run cov",

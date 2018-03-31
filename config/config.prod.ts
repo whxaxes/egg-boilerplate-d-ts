@@ -3,8 +3,8 @@
 import { BaseConfig, Config } from './utils';
 
 @Config
-export default class LocalConfig extends BaseConfig {
+export default class ProdConfig extends BaseConfig {
   local = {
-    msg: 'local config',
+    msg2: 'prod config',
   };
 }

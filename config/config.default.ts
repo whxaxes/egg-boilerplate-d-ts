@@ -1,16 +1,17 @@
 'use strict';
 
 import { EggAppConfig } from 'egg';
+import { BaseConfig, Config } from './utils';
 
-export default (appInfo: EggAppConfig) => {
-  const config: any = {};
-
-  // should change to your own
-  config.keys = appInfo.name + '_1513135333623_4128';
-
-  config.middleware = [
+@Config
+export default class DefaultConfig extends BaseConfig {
+  keys: string;
+  middleware = [
     'uuid',
   ];
 
-  return config;
-};
+  constructor(appInfo: EggAppConfig) {
+    super(appInfo);
+    this.keys = this.appInfo.name + '_1513135333623_4128';
+  }
+}

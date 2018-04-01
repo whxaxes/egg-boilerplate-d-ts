@@ -1,9 +1,13 @@
 import { EggAppConfig } from 'egg';
-import DefaultConfig from './config.default';
-import LocalConfig from './config.local';
-import ProdConfig from './config.prod';
+import defaultConfig from './config.default';
+import localConfig from './config.local';
+import prodConfig from './config.prod';
 
-type NewEggAppConfig = EggAppConfig & DefaultConfig & LocalConfig & ProdConfig;
+type NewEggAppConfig = EggAppConfig &
+  ReturnType<typeof defaultConfig> &
+  ReturnType<typeof localConfig> &
+  ReturnType<typeof prodConfig>;
+
 declare module 'egg' {
   interface Application {
     config: NewEggAppConfig;
@@ -18,10 +22,6 @@ declare module 'egg' {
   }
 
   interface Service {
-    config: NewEggAppConfig;
-  }
-
-  interface BaseContextClass {
     config: NewEggAppConfig;
   }
 }

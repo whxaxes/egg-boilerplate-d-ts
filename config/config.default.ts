@@ -1,14 +1,12 @@
 'use strict';
 
-import { BaseConfig, Config } from './utils';
+import { EggAppConfig } from 'egg';
 
-@Config
-export default class DefaultConfig extends BaseConfig {
-  get keys() {
-    return this.appInfo.name + '_1513135333623_4128';
-  }
-
-  middleware = [
-    'uuid',
-  ];
+export default function(appInfo: EggAppConfig) {
+  return {
+    keys: this.appInfo.name + '_1513135333623_4128',
+    middleware: [
+      'uuid',
+    ],
+  };
 }

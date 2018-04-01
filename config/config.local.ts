@@ -6,5 +6,8 @@ import { BaseConfig, Config } from './utils';
 export default class LocalConfig extends BaseConfig {
   local = {
     msg: 'local config',
+    go: {
+      test: 'yoyo',
+    },
   };
 }

@@ -6,5 +6,8 @@ import { BaseConfig, Config } from './utils';
 export default class ProdConfig extends BaseConfig {
   local = {
     msg2: 'prod config',
+    go: {
+      test2: 'yoyo',
+    },
   };
 }

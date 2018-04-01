@@ -6,7 +6,17 @@ export class BaseConfig {
 
 export function Config<T extends { new (appInfo: EggAppConfig): BaseConfig }>(constructor: T) {
   const returnFunc = (appInfo: EggAppConfig) => {
-    return new constructor(appInfo);
+    const keys = Object.getOwnPropertyNames(constructor.prototype);
+    const config = new constructor(appInfo);
+    const ret = { ...config };
+    // add getter
+    for (const key of keys) {
+      if (key === 'constructor') {
+        continue;
+      }
+      ret[key] = config[key];
+    }
+    return ret;
   };
   return returnFunc as any as T;
 }

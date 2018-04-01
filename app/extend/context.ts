@@ -1,9 +1,8 @@
 import { Context } from 'egg';
 
 export default {
-  get isProd() {
-    const ctx = this as any as Context;
-    return ctx.app.config.env === 'prod';
+  get isProd(this: Context) {
+    return this.app.config.env === 'prod';
   },
 
   isAjax(this: Context) {

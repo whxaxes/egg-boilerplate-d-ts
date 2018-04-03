@@ -1,12 +1,11 @@
 'use strict';
 
-export default function() {
+import { NewEggAppConfig } from './config.default';
+
+export default function(): NewEggAppConfig {
   return {
     local: {
-      msg2: 'prod config',
-      go: {
-        test2: 'yoyo',
-      },
+      msg: 'prod',
     },
   };
 };

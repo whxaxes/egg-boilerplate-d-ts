@@ -11,7 +11,9 @@ export default class HomeController extends Controller {
       ctx.body = { time };
     } else {
       ctx.body = `
-      <div id="time" style="text-align: center;font-size: 24px;padding: 30px 0;">${time}</div>
+      <div id="time" style="text-align: center;font-size: 24px;padding: 30px 0;">
+        ${ctx.config.local ? ctx.config.local.msg : ''}${time}
+      </div>
       <script>
         setInterval(function() {
           var xhr = new XMLHttpRequest();

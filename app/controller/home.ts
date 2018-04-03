@@ -11,8 +11,8 @@ export default class HomeController extends Controller {
       ctx.body = { time };
     } else {
       ctx.body = `
-      <div id="time" style="text-align: center;font-size: 24px;padding: 30px 0;">
-        ${ctx.config.local ? ctx.config.local.msg : ''}${time}
+      <div style="text-align: center;font-size: 24px;padding: 30px 0;">
+        ${this.config.local ? this.config.local.msg : ''} <span id="time">${time}</span>
       </div>
       <script>
         setInterval(function() {

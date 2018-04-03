@@ -1,11 +1,11 @@
 'use strict';
 
-import { NewEggAppConfig } from './config.default';
+import { DefaultConfig } from './config.default';
 
-export default function(): NewEggAppConfig {
+export default function(): DefaultConfig {
   return {
     local: {
-      msg: 'local msg',
+      msg: 'local',
     },
   };
 };

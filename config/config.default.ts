@@ -1,23 +1,20 @@
 'use strict';
 
-import { EggAppConfig } from 'egg';
+import { EggAppConfig, EggConfig } from 'egg';
 
-export interface BuzConfig {
+// business config
+export interface BizConfig {
   [key: string]: any;
-  middleware?: string[];
   local?: {
     msg: string;
   };
 }
 
-export type NewEggAppConfig = {
-  [key in keyof EggAppConfig]?: {
-    [k in keyof EggAppConfig[key]]?: EggAppConfig[key][k]
-  }
-} & BuzConfig;
+// default config
+export type DefaultConfig = EggConfig & BizConfig;
 
 export default function(appInfo: EggAppConfig) {
-  const config: NewEggAppConfig = {};
+  const config: DefaultConfig = {};
   config.keys = appInfo.name + '_1513135333623_4128';
   config.middleware = [ 'uuid' ];
   config.local = {

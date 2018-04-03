@@ -36,7 +36,7 @@
     "concurrently": "^3.5.1",
     "egg-bin": "^4.3.7",
     "egg-mock": "^3.15.0",
-    "egg-ts-helper": "^1.3.2",
+    "egg-ts-helper": "^1.4.2",
     "mocha": "^4.1.0",
     "trash-cli": "^1.4.0",
     "ts-loader": "^3.2.0",

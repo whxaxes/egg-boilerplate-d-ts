@@ -1,6 +1,6 @@
 'use strict';
 
-import { EggAppConfig, EggConfig, PowerPartial } from 'egg';
+import { EggAppConfig, PowerPartial } from 'egg';
 
 // business config
 export interface BizConfig {
@@ -11,13 +11,18 @@ export interface BizConfig {
 }
 
 // default config
-export type DefaultConfig = EggConfig & PowerPartial<BizConfig>;
-export default function(appInfo: EggAppConfig): EggConfig & BizConfig {
-  return {
-    keys: appInfo.name + '123123',
-    middleware: [ 'uuid' ],
-    local: {
-      msg: 'default',
-    },
+export type DefaultConfig = PowerPartial<EggAppConfig & BizConfig>;
+
+export default function(appInfo: EggAppConfig) {
+  const config = {} as PowerPartial<EggAppConfig> & BizConfig;
+
+  config.keys = appInfo.name + '123123';
+
+  config.middleware = ['uuid'];
+
+  config.local = {
+    msg: 'local',
   };
+
+  return config;
 }

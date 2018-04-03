@@ -1,12 +1,12 @@
-import { Context, EggAppConfig } from 'egg';
+import { EggAppConfig } from 'egg';
 
 // extend egg
 declare module 'egg' {
-  type EggConfig = {
-    [T in keyof EggAppConfig]?: {
-      [U in keyof EggAppConfig[T]]?: {
-        [V in keyof EggAppConfig[T][U]]?: EggAppConfig[T][U][V];
-      }
-    }
-  }
+  type PowerPartial<T> = {
+    [U in keyof T]?: T[U] extends {}
+      ? { [V in keyof T[U]]?: T[U][V] extends {} ? Partial<T[U][V]> : T[U][V] }
+      : T[U]
+  };
+
+  type EggConfig = PowerPartial<EggAppConfig>;
 }

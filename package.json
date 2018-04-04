@@ -18,7 +18,7 @@
     "typescript": true
   },
   "dependencies": {
-    "egg": "^2.2.0",
+    "egg": "^2.6.0",
     "egg-scripts": "^2.0.0",
     "moment": "^2.20.1",
     "source-map-support": "^0.5.0",

@@ -1,15 +1,18 @@
 import { Context } from 'egg';
 import { v4 } from 'uuid';
+import { BizConfig } from '../../config/config.default';
 
-export default function() {
+export default function(options: BizConfig['uuid']) {
   return async (ctx: Context, next: any) => {
-    let uuid = ctx.cookies.get('uuid', { signed: true });
+    const name = options.name || 'uuid';
+    let uuid = ctx.cookies.get(name, { signed: true });
 
     if (!uuid || uuid === 'null') {
       uuid = v4();
 
-      ctx.cookies.set('uuid', uuid, {
+      ctx.cookies.set(name, uuid, {
         signed: true,
+        maxAge: options.maxAge,
       });
     }
 

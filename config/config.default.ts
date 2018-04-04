@@ -8,6 +8,10 @@ export interface BizConfig {
   local: {
     msg: string;
   };
+  uuid: {
+    name: string;
+    maxAge: number;
+  };
 }
 
 // default config
@@ -22,6 +26,11 @@ export default function(appInfo: EggAppConfig) {
 
   config.local = {
     msg: 'local',
+  };
+
+  config.uuid = {
+    name: 'ebuuid',
+    maxAge: 1000 * 60 * 60 * 24 * 365 * 10,
   };
 
   return config;

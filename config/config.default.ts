@@ -4,7 +4,6 @@ import { EggAppConfig, PowerPartial } from 'egg';
 
 // business config
 export interface BizConfig {
-  middleware?: string[];
   local: {
     msg: string;
   };

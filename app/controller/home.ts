@@ -7,6 +7,9 @@ export default class HomeController extends Controller {
     const { ctx, service } = this;
     const time = service.time.today();
 
+    // model
+    // ctx.model.User.findAll
+
     if (ctx.isAjax()) {
       ctx.body = { time };
     } else {

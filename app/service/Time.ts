@@ -1,5 +1,5 @@
 import { Service } from 'egg';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export default class TestService extends Service {
   today() {

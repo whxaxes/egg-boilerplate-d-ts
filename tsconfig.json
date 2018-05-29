@@ -7,6 +7,8 @@
     "noImplicitAny": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "charset": "utf8",
     "allowJs": false,
     "pretty": true,

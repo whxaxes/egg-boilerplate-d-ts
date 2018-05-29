@@ -23,13 +23,13 @@ export default function(appInfo: EggAppConfig) {
 
   config.middleware = ['uuid'];
 
-  config.local = {
-    msg: 'local',
-  };
-
   config.uuid = {
     name: 'ebuuid',
     maxAge: 1000 * 60 * 60 * 24 * 365 * 10,
+  };
+
+  config.local = {
+    msg: 'local',
   };
 
   return config;

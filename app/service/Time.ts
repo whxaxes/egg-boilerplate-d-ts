@@ -1,5 +1,5 @@
 import { Service } from 'egg';
-import moment from 'moment';
+import moment = require('moment');
 
 export default class TestService extends Service {
   today() {

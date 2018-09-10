@@ -1,8 +1,8 @@
 'use strict';
 
-import { DefaultConfig } from './config.default';
+import { EggAppConfig, PowerPartial } from 'egg';
 
-export default function(): DefaultConfig {
+export default function(): PowerPartial<EggAppConfig> {
   return {
     local: {
       msg: 'local',

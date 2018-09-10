@@ -9,6 +9,7 @@ private/
 *.swp
 *.lock
 *.js
+yarn*
 app/**/*.js
 test/**/*.js
 config/**/*.js

@@ -6,9 +6,7 @@ export default class HomeController extends Controller {
   public async index() {
     const { ctx, service } = this;
     const time = service.time.today();
-
-    // model
-    // ctx.model.User.findAll
+    // ctx.app.model.User.getData();
 
     if (ctx.isAjax()) {
       ctx.body = { time };

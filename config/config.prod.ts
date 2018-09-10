@@ -1,10 +1,8 @@
 'use strict';
 
-import { DefaultConfig } from './config.default';
-
-export default function(): DefaultConfig {
+export default function() {
   return {
-    local: {
+    prodLocal: {
       msg: 'prod',
     },
   };

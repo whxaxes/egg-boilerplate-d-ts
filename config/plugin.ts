@@ -1,8 +1,12 @@
 'use strict';
 
-export default {
-  sequelize: {
-    package: 'egg-sequelize',
-    enable: false,
-  },
+import { EggPlugin } from 'egg';
+
+const plugin: EggPlugin = {
+  // mongoose: {
+  //   package: 'egg-mongoose',
+  //   enable: false,
+  // },
 };
+
+export default plugin;

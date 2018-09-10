@@ -11,6 +11,7 @@
     "charset": "utf8",
     "allowJs": false,
     "pretty": true,
+    "lib": ["es6"],
     "noEmitOnError": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

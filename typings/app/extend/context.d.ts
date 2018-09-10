@@ -1,10 +1,9 @@
 // This file was auto created by egg-ts-helper
 // Do not modify this file!!!!!!!!!
 
-import ExtendObject from '../../../app/extend/context';
+import 'egg'; // Make sure ts to import egg declaration at first
+import ExtendContext from '../../../app/extend/context';
 declare module 'egg' {
-  interface Context {
-    isProd: typeof ExtendObject.isProd;
-    isAjax: typeof ExtendObject.isAjax;
-  }
+  type ExtendContextType = typeof ExtendContext;
+  interface Context extends ExtendContextType { }
 }

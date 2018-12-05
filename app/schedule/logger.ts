@@ -4,6 +4,6 @@ export default {
     type: 'all',
   },
   async task() {
-    console.info('>>>>>>>>>>>>>>> lalalala');
+    // console.info('>>>>>>>>>>>>>>> lalalala');
   },
 };

@@ -4,7 +4,7 @@ module.exports = {
   watchDirs: {
     model: {
       path: 'app/model', // dir path
-      generator: 'function', // generator name
+      generator: 'auto', // generator name
       declareTo: 'Application.model', // declare to this interface
     },
   },

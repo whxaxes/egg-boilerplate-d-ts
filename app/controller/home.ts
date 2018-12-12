@@ -7,6 +7,7 @@ export default class HomeController extends Controller {
     const { ctx, service } = this;
     const time = service.time.today();
     this.app.logger.info(ctx.app.model.User.getData());
+    this.app.logger.info(ctx.app.model.Castle.getData());
 
     if (ctx.isAjax()) {
       ctx.body = { time };

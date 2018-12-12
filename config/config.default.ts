@@ -15,6 +15,15 @@ export default function(appInfo: EggAppConfig) {
     },
   };
 
+  config.redis = {
+    client: {
+      port: 6379,          // Redis port
+      host: '127.0.0.1',   // Redis host
+      password: '',
+      db: 0,
+    },
+  };
+
   const bizConfig = {
     local: {
       msg: 'local',
@@ -27,7 +36,7 @@ export default function(appInfo: EggAppConfig) {
   };
 
   return {
-    ...config,
+    ...config as {},
     ...bizConfig,
   };
 }

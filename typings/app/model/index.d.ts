@@ -2,6 +2,8 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
+type AutoInstanceType<T, U = T extends (...args: any[]) => any ? ReturnType<T> : T> = U extends { new (...args: any[]): any } ? InstanceType<U> : U;
+import ExportCastle from '../../../app/model/Castle';
 import ExportUser from '../../../app/model/User';
 
 declare module 'egg' {
@@ -10,6 +12,7 @@ declare module 'egg' {
   }
 
   interface IModel {
-    User: ReturnType<typeof ExportUser>;
+    Castle: AutoInstanceType<typeof ExportCastle>;
+    User: AutoInstanceType<typeof ExportUser>;
   }
 }

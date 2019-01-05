@@ -4,7 +4,7 @@
   "description": "egg ts boilerplate using d.ts",
   "scripts": {
     "start": "egg-scripts start",
-    "dev": "egg-bin dev -r 'egg-ts-helper/register'",
+    "dev": "egg-bin dev",
     "tsc": "ets && tsc -p tsconfig.json",
     "clean": "ets clean",
     "test": "npm run lint -- --fix && npm run test-local",
@@ -15,7 +15,10 @@
     "debug": "egg-bin debug"
   },
   "egg": {
-    "typescript": true
+    "typescript": true,
+    "require": [
+      "egg-ts-helper/register"
+    ]
   },
   "dependencies": {
     "@types/ioredis": "^4.0.4",

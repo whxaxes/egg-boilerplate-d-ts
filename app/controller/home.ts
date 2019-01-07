@@ -1,6 +1,7 @@
 'use strict';
 
 import { Controller } from 'egg';
+import { formatDate } from '~/app/lib/utils';
 
 export default class HomeController extends Controller {
   public async index() {
@@ -8,6 +9,7 @@ export default class HomeController extends Controller {
     const time = service.time.today();
     this.app.logger.info(ctx.app.model.User.getData());
     this.app.logger.info(ctx.app.model.Castle.getData());
+    this.app.logger.info(`request visit in ${formatDate(new Date())}`);
 
     if (ctx.isAjax()) {
       ctx.body = { time };

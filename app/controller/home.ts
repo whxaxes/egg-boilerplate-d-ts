@@ -10,6 +10,7 @@ export default class HomeController extends Controller {
     this.app.logger.info(ctx.app.model.User.getData());
     this.app.logger.info(ctx.app.model.Castle.getData());
     this.app.logger.info(`request visit in ${formatDate(new Date())}`);
+    this.app.logger.info(this.ctx.helper.test().ip);
 
     if (ctx.isAjax()) {
       ctx.body = { time };

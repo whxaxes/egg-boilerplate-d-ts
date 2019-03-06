@@ -7,7 +7,7 @@ export default function(appInfo: EggAppConfig) {
 
   config.keys = appInfo.name + '123123';
 
-  config.middleware = ['uuid'];
+  config.middleware = [ 'uuid' ];
 
   config.security = {
     csrf: {

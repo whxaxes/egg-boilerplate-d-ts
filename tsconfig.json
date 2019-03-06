@@ -20,7 +20,6 @@
     "strictPropertyInitialization": false,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
     "inlineSourceMap": true,
     "baseUrl": ".",
     "paths": {

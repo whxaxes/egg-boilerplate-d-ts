@@ -15,6 +15,14 @@ export default function(appInfo: EggAppConfig) {
     },
   };
 
+  config.customLoader = {
+    model: {
+      directory: 'app/model',
+      inject: 'app',
+      caseStyle: 'upper',
+    },
+  };
+
   config.redis = {
     client: {
       port: 6379,          // Redis port

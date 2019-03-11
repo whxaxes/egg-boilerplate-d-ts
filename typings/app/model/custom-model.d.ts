@@ -1,4 +1,4 @@
-// This file is created by egg-ts-helper
+// This file is created by egg-ts-helper@1.24.1
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
@@ -8,10 +8,10 @@ import ExportUser from '../../../app/model/User';
 
 declare module 'egg' {
   interface Application {
-    model: IModel;
+    model: T_custom_model;
   }
 
-  interface IModel {
+  interface T_custom_model {
     Castle: AutoInstanceType<typeof ExportCastle>;
     User: AutoInstanceType<typeof ExportUser>;
   }

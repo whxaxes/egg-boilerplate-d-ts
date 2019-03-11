@@ -1,7 +1,5 @@
-export default () => {
-  return {
-    getData() {
-      return 'data';
-    },
-  };
-};
+export default class MyModel {
+  getData() {
+    return 'data';
+  }
+}

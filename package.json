@@ -41,7 +41,7 @@
     "mocha": "^4.1.0",
     "trash-cli": "^1.4.0",
     "ts-loader": "^3.2.0",
-    "tslint": "^4.0.0",
+    "tslint": "^5.0.0",
     "tslint-config-egg": "^1.0.0"
   },
   "author": "whxaxes<whxaxes@gmail.com>"

@@ -1,5 +1,5 @@
-export default {
+export default class MyModel {
   getData() {
     return 'data';
-  },
-};
+  }
+}

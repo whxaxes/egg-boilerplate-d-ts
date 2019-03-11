@@ -3,16 +3,11 @@
 import 'tsconfig-paths/register';
 import { EggPlugin } from 'egg';
 
-const plugin: EggPlugin = {
-  // mongoose: {
-  //   package: 'egg-mongoose',
-  //   enable: false,
-  // },
+const plugin: EggPlugin = {};
 
-  routerPlus: {
-    package: 'egg-router-plus',
-    enable: true,
-  },
+plugin.routerPlus = {
+  package: 'egg-router-plus',
+  enable: true,
 };
 
 export default plugin;

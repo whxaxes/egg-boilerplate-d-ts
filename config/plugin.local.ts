@@ -1,5 +1,7 @@
 'use strict';
 
-export default {
+import { EggPlugin } from 'egg';
 
-};
+const plugin: EggPlugin = {};
+
+export default plugin;

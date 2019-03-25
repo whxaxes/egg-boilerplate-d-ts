@@ -1,8 +1,11 @@
-// This file is created by egg-ts-helper@1.24.1
+// This file is created by egg-ts-helper@1.25.1
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-type AutoInstanceType<T, U = T extends (...args: any[]) => any ? ReturnType<T> : T> = U extends { new (...args: any[]): any } ? InstanceType<U> : U;
+type AnyClass = new (...args: any[]) => any;
+type AnyFunc<T = any> = (...args: any[]) => T;
+type CanExportFunc = AnyFunc<Promise<any>> | AnyFunc<IterableIterator<any>>;
+type AutoInstanceType<T, U = T extends CanExportFunc ? T : T extends AnyFunc ? ReturnType<T> : T> = U extends AnyClass ? InstanceType<U> : U;
 import ExportCastle from '../../../app/model/Castle';
 import ExportUser from '../../../app/model/User';
 

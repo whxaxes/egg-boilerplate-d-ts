@@ -1,9 +1,20 @@
 'use strict';
 
-import { Controller } from 'egg';
+import { Controller, Context } from 'egg';
 import { formatDate } from '~/app/lib/utils';
 
+function validate() {
+  return (_target: HomeController, propertyKey: string, descriptor: PropertyDescriptor) => {
+    const oldAsyncFunc = descriptor.value;
+    descriptor.value = async function(ctx: Context) {
+      console.info('validate in', propertyKey, ctx.app.config.HOME);
+      await oldAsyncFunc.call(this, ctx);
+    };
+  };
+}
+
 export default class HomeController extends Controller {
+  @validate()
   public async index() {
     const { ctx, service } = this;
     const time = service.time.today();

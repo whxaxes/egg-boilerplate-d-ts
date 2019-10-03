@@ -12,7 +12,9 @@
     "cov": "egg-bin cov",
     "lint": "tslint .",
     "ci": "npm run lint && npm run cov",
-    "debug": "egg-bin debug"
+    "debug": "egg-bin debug",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "egg": {
     "typescript": true,
@@ -28,7 +30,8 @@
     "tsconfig-paths": "^3.7.0",
     "tslib": "^1.8.1",
     "typescript": "^3.0.0",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",
@@ -45,5 +48,6 @@
     "tslint": "^5.0.0",
     "tslint-config-egg": "^1.0.0"
   },
-  "author": "whxaxes<whxaxes@gmail.com>"
+  "author": "whxaxes<whxaxes@gmail.com>",
+  "snyk": true
 }

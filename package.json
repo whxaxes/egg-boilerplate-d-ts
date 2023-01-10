@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@types/ioredis": "^4.0.6",
-    "egg": "^2.6.0",
+    "egg": "^3.10.0",
     "egg-router-plus": "^1.3.0",
     "egg-scripts": "^2.0.0",
     "egg-ts-helper": "^1.25.0",
